@@ -318,6 +318,12 @@
       <div class="w-100">
         <h2 class="mb-5">Mon Compte</h2>
         <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, cupiditate nobis. Accusantium accusamus veniam rem fugit quaerat? Odio quo sit voluptas aperiam, quia modi fugit ullam eos? Ex, ullam nam?</p>
+      <!-- nom -->
+      <!-- prenom -->
+      <!-- mail -->
+      <!-- mdp -->
+      <!-- mdp conf -->
+
       </div>
     </section>
 
