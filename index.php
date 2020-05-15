@@ -99,6 +99,19 @@
       <div class="w-100">
         <h2 class="mb-5">Experience</h2>
 
+        <?php
+          $pdo = new PDO("mysql:host=localhost;dbname=php_projet","root","", array
+          (PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+          $result = $pdo->query("SELECT * FROM experiences");
+          while ($experiences = $result->fetch(PDO::FETCH_OBJ)){
+            echo $experiences->title . "<br>";
+            echo $experiences->texte . "<br>";
+            echo $experiences->date_redaction . "<br>";
+            echo "<br>";
+
+}
+        ?>
+
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
             <h3 class="mb-0">Senior Web Developer</h3>
