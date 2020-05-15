@@ -55,8 +55,11 @@
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#admin">Admin</a>
+        </li> -->
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="">Admin</a>
+          <a class="nav-link js-scroll-trigger" href="#compte">Compte</a>
         </li>
       </ul>
     </div>
@@ -283,6 +286,38 @@
             3<sup>rd</sup>
             Place - James Buchanan High School - Hackathon 2005</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="admin">
+      <div class="w-100">
+        <h2 class="mb-5">Administration</h2>
+          <div class="starter-template">  
+            <form method="POST" action="" enctype='multipart/form-data'>
+                <div class="form-group">
+                    <label for="titre">Titre de l'experience</label>
+                    <input type="texte" class="form-control" id="titre" name="titre">
+                </div>
+
+                <div class="form-group">
+                    <label for="contenu">Contenu de l'experience</label>
+                    <textarea rows="10" class="form-control" id="contenu" name="contenu"></textarea>
+                </div>
+
+                <!-- <div class="form-group">
+                    <input type="file" class="form-control-file" id="img" name="img[]">
+                </div> -->
+
+                <button type="submit" class="btn btn-primary">Enregistrer</button>
+            </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="compte">
+      <div class="w-100">
+        <h2 class="mb-5">Mon Compte</h2>
+        <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, cupiditate nobis. Accusantium accusamus veniam rem fugit quaerat? Odio quo sit voluptas aperiam, quia modi fugit ullam eos? Ex, ullam nam?</p>
       </div>
     </section>
 
