@@ -69,11 +69,11 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
       <div class="w-100">
-        <h1 class="mb-0">Clarence
-          <span class="text-primary">Taylor</span>
+        <h1 class="mb-0">Tom
+          <span class="text-primary">COUSDIKIAN</span>
         </h1>
         <div class="subheading mb-5">3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 ·
-          <a href="mailto:name@email.com">name@email.com</a>
+          <a href="mailto:name@email.com">tom.cousdikian@ynov.com</a>
         </div>
         <p class="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
         <div class="social-icons">
@@ -103,14 +103,21 @@
           $pdo = new PDO("mysql:host=localhost;dbname=php_projet","root","", array
           (PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
           $result = $pdo->query("SELECT * FROM experiences");
-          while ($experiences = $result->fetch(PDO::FETCH_OBJ)){
-            echo $experiences->title . "<br>";
-            echo $experiences->texte . "<br>";
-            echo $experiences->date_redaction . "<br>";
-            echo "<br>";
-
-}
-        ?>
+          while ($experiences = $result->fetch(PDO::FETCH_OBJ))
+          {
+          ?>
+           <h3 class="mb-0"> <?php echo $experiences->title . "<br>"; ?></h3>
+           <?php
+              echo $experiences->texte . "<br>";
+            ?>
+              <div class="resume-date text-md-right">
+                <span class="text-primary"><?php echo $experiences->date_redaction . "<br>"; ?> </span>
+              </div>
+          <?php
+              echo "<br>";
+          }
+          ?>
+        
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
