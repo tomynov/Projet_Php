@@ -1,5 +1,3 @@
-                                                <!--  NON FONCTIONNELLE -->
-
 <head>
 
 <meta charset="utf-8">
@@ -34,6 +32,7 @@
       echo $result . ' experiences a été enregistrée<br>';
     }
 ?>
+
  <form action="index.php#experience" method="post" target="_blanck">
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="admin">
       <div class="w-100">
@@ -56,4 +55,3 @@
     </section>
   </form>
 
-                                                    <!--  NON FONCTIONNELLE -->

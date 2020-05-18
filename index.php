@@ -27,30 +27,11 @@
 
   <?php include("inc/header.inc.php"); ?>
 
-  <?php 
-
-// if(!empty($_GET["id_wishlist"])) {
-//         session_start();
-//         $isInWishList = false;
-//         foreach($_SESSION as $key => $value) {
-//                 if ($value == $_GET["id_wishlist"]) {
-//                         $isInWishList = true;
-//                 }
-//         }
-//         if (!$isInWishList) {
-//                 $_SESSION['expe'.$_GET["id_wishlist"]] = $_GET["id_wishlist"];
-//         }
-// }
-
-?>
-
   <div class="container-fluid p-0">
-
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
       <div class="w-100">
         <?php
-          $pdo = new PDO("mysql:host=localhost;dbname=php_projet","root","", array
-          (PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+          include("inc/data.inc.php");
           $cv = $pdo->query("SELECT * FROM about");
           while ($about = $cv->fetch(PDO::FETCH_OBJ))
           {
@@ -348,13 +329,6 @@
                     </section>
                 </section>
             </form>
-            <!--Fin contact-->
-      <!-- nom -->
-      <!-- prenom -->
-      <!-- mail -->
-      <!-- mdp -->
-      <!-- mdp conf -->
-
       </div>
     </section>
 
