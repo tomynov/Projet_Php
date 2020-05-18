@@ -133,7 +133,7 @@
           </div>
         </div> -->
 
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+        <!-- <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
             <h3 class="mb-0">Web Developer</h3>
             <div class="subheading mb-3">Intelitec Solutions</div>
@@ -142,7 +142,7 @@
           <div class="resume-date text-md-right">
             <span class="text-primary">December 2011 - March 2013</span>
           </div>
-        </div>
+        </div> -->
 
         <!-- <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
@@ -312,19 +312,31 @@
       </div>
     </section>
 
+    <?php
+    if (!empty($_POST)) {
+      $_POST["title"] = htmlentities($_POST["title"], ENT_QUOTES);
+      $_POST["texte"] = htmlentities($_POST["texte"], ENT_QUOTES);
+  
+      $requeteSQL = "INSERT INTO experiences (title, texte)";
+      $requeteSQL .= " VALUE ('$_POST[title]', '$_POST[texte]')";
+      //echo $requeteSQL;
+      $result = $pdo->exec($requeteSQL);
+      echo $result . ' experiences a été enregistrée<br>';
+    }
+    ?>
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="admin">
       <div class="w-100">
         <h2 class="mb-5">Administration</h2>
           <div class="starter-template">  
             <form method="POST" action="" enctype='multipart/form-data'>
                 <div class="form-group">
-                    <label for="titre">Titre de l'experience</label>
-                    <input type="texte" class="form-control" id="titre" name="titre">
+                    <label for="title">Titre de l'experience</label>
+                    <input type="texte" class="form-control" id="title" name="title">
                 </div>
 
                 <div class="form-group">
-                    <label for="contenu">Contenu de l'experience</label>
-                    <textarea rows="10" class="form-control" id="contenu" name="contenu"></textarea>
+                    <label for="texte">Texte de l'experience</label>
+                    <textarea rows="10" class="form-control" id="texte" name="texte"></textarea>
                 </div>
 
                 <!-- <div class="form-group">
