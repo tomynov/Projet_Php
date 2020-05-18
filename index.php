@@ -309,37 +309,13 @@
       echo $result . ' experiences a été enregistrée<br>';
     }
     ?>
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="admin">
-      <div class="w-100">
-        <h2 class="mb-5">Administration</h2>
-          <div class="starter-template">  
-            <form method="POST" action="" enctype='multipart/form-data'>
-                <div class="form-group">
-                    <label for="title">Titre de l'experience</label>
-                    <input type="texte" class="form-control" id="title" name="title">
-                </div>
-
-                <div class="form-group">
-                    <label for="texte">Texte de l'experience</label>
-                    <textarea rows="10" class="form-control" id="texte" name="texte"></textarea>
-                </div>
-
-                <!-- <div class="form-group">
-                    <input type="file" class="form-control-file" id="img" name="img[]">
-                </div> -->
-
-                <button type="submit" class="btn btn-primary">Enregistrer</button>
-            </form>
-        </div>
-      </div>
-    </section>
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="compte">
       <div class="w-100">
         <h2 class="mb-5">Mon Compte</h2>
         <!-- <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, cupiditate nobis. Accusantium accusamus veniam rem fugit quaerat? Odio quo sit voluptas aperiam, quia modi fugit ullam eos? Ex, ullam nam?</p> -->
         
-        <form action="index.php#admin" method="post">
+        <form action="admin.php" method="post">
                     <section class="inscription">
                             <!--champs Prenom-->
                             <div class="formulaire_cont">

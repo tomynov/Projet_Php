@@ -20,9 +20,8 @@
 </head>
 <?php include("inc/header.inc.php"); ?>
 
-<?php
-    $pdo = new PDO("mysql:host=localhost;dbname=php_projet","root","", array
-?>
+<?php include("inc/data.inc.php"); ?>
+
 
 <?php
     if (!empty($_POST)) {
@@ -34,7 +33,8 @@
       $result = $pdo->exec($requeteSQL);
       echo $result . ' experiences a été enregistrée<br>';
     }
-    ?>
+?>
+ <form action="index.php#experience" method="post" target="_blanck">
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="admin">
       <div class="w-100">
         <h2 class="mb-5">Administration</h2>
@@ -49,10 +49,11 @@
                     <label for="texte">Texte de l'experience</label>
                     <textarea rows="10" class="form-control" id="texte" name="texte"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Enregistrer</button>
+                  <button type="submit" class="btn btn-primary">Enregistrer</button>
             </form>
         </div>
       </div>
     </section>
+  </form>
 
                                                     <!--  NON FONCTIONNELLE -->
