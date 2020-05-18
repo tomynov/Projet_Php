@@ -27,6 +27,23 @@
 
   <?php include("inc/header.inc.php"); ?>
 
+  <?php 
+
+// if(!empty($_GET["id_wishlist"])) {
+//         session_start();
+//         $isInWishList = false;
+//         foreach($_SESSION as $key => $value) {
+//                 if ($value == $_GET["id_wishlist"]) {
+//                         $isInWishList = true;
+//                 }
+//         }
+//         if (!$isInWishList) {
+//                 $_SESSION['expe'.$_GET["id_wishlist"]] = $_GET["id_wishlist"];
+//         }
+// }
+
+?>
+
   <div class="container-fluid p-0">
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
@@ -66,27 +83,6 @@
           }
         ?>
 
-        <!-- <h1 class="mb-0">Tom
-          <span class="text-primary">COUSDIKIAN</span>
-        </h1>
-        <div class="subheading mb-5">3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 ·
-          <a href="mailto:name@email.com">tom.cousdikian@ynov.com</a>
-        </div>
-        <p class="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
-        <div class="social-icons">
-          <a href="#">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="#">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="#">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-        </div> -->
       </div>
     </section>
 
@@ -106,8 +102,22 @@
 
           <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
             <div class="resume-content">
-              <h3 class="mb-0"><?php echo $experiences->title . "<br>"; ?></h3>
+              <h3 class="mb-0"><?php echo $experiences->title . "<br>"; ?>
+              
+              </h3>
               <p><?php echo $experiences->texte . "<br>"; ?></p>
+
+              <form action="" method="post">
+                  <input type="hidden" name="goClearSession" value="1" >
+                  <button type="submit" class="btn btn-primary">Supprimer</button>
+              </form>
+              <?php
+
+              // if(!empty($_POST["goClearSession"])) {
+              //     session_destroy();
+              //     $_SESSION = array();
+              // }
+              // ?>
             </div>
             <div class="resume-date text-md-right">
               <span class="text-primary"><?php echo $experiences->date_redaction . "<br>"; ?></span>
@@ -119,9 +129,6 @@
           }
           ?>
 
-          
-        
-
         <!-- <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
             <h3 class="mb-0">Senior Web Developer</h3>
@@ -130,28 +137,6 @@
           </div>
           <div class="resume-date text-md-right">
             <span class="text-primary">March 2013 - Present</span>
-          </div>
-        </div> -->
-
-        <!-- <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Web Developer</h3>
-            <div class="subheading mb-3">Intelitec Solutions</div>
-            <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">December 2011 - March 2013</span>
-          </div>
-        </div> -->
-
-        <!-- <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Junior Web Designer</h3>
-            <div class="subheading mb-3">Shout! Media Productions</div>
-            <p>Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">July 2010 - December 2011</span>
           </div>
         </div> -->
 
@@ -352,7 +337,42 @@
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="compte">
       <div class="w-100">
         <h2 class="mb-5">Mon Compte</h2>
-        <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, cupiditate nobis. Accusantium accusamus veniam rem fugit quaerat? Odio quo sit voluptas aperiam, quia modi fugit ullam eos? Ex, ullam nam?</p>
+        <!-- <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, cupiditate nobis. Accusantium accusamus veniam rem fugit quaerat? Odio quo sit voluptas aperiam, quia modi fugit ullam eos? Ex, ullam nam?</p> -->
+        
+        <form action="index.php#admin" method="post">
+                    <section class="inscription">
+                            <!--champs Prenom-->
+                            <div class="formulaire_cont">
+                                <label>Prenom</label>
+                                <input class="form-control" id ="prenom" name="prenom" type="text" placeholder="Mon Prenom" required>
+                            </div>
+                            <!--champs nom-->
+                            <div class="formulaire_cont">
+                                <label>Nom</label>
+                                <input class="form-control" id ="nom" name="nom" type="text" placeholder="Mon NOM" required>
+                            </div>
+                            <!-- champs email -->
+                            <div class="formulaire_cont">
+                                <label>Email</label>
+                                <input class="form-control" id ="email" name="email" type="email" placeholder="Myname@example.com" id="email" required>
+                            </div>
+                            <!-- champs mpd -->
+                            <div class="formulaire_cont">
+                              <label >Password (6 characters minimum):</label>
+                              <input class="form-control" type="password" id="pass" name="password" minlength="6" required>
+                            </div>
+                            <!-- champs button -->
+                            <?php echo"<br>"?>
+                            <div class="formulaire_cont">
+                                <!-- <a href="index.php#admin"> -->
+                                <input type="submit" id="btn" name="btn" value="Inscription" title="Valider votre message" required>
+                                <!-- </a> -->
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            </form>
+            <!--Fin contact-->
       <!-- nom -->
       <!-- prenom -->
       <!-- mail -->
