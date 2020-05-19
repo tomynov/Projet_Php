@@ -30,6 +30,11 @@
       $requeteSQL .= " VALUE ('$_POST[title]', '$_POST[texte]')";
       $result = $pdo->exec($requeteSQL);
       echo $result . ' experiences a été enregistrée<br>';
+
+      // $suppSQL = "DELETE experiences (title, texte)";
+      // $suppSQL .= " VALUE ('$_POST[title]', '$_POST[texte]')";
+      // $result_1 = $pdo->exec($suppSQL);
+      // echo $result_1 . ' experiences a été enregistrée<br>';
     }
 ?>
 

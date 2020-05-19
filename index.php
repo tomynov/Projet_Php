@@ -94,6 +94,7 @@
               </form>
               <?php
 
+              // ********* La fonction pour supprimer ne marche pas correctement
               // if(!empty($_POST["goClearSession"])) {
               //     session_destroy();
               //     $_SESSION = array();
@@ -285,7 +286,6 @@
   
       $requeteSQL = "INSERT INTO experiences (title, texte)";
       $requeteSQL .= " VALUE ('$_POST[title]', '$_POST[texte]')";
-      //echo $requeteSQL;
       $result = $pdo->exec($requeteSQL);
       echo $result . ' experiences a été enregistrée<br>';
     }
